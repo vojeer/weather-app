@@ -45,25 +45,56 @@
 <div class="container">
   <div class="d-flex justify-content-center mt-5">
     <div class="card shadow position-relative" style="width: 18rem;">
-      <div class="position-absolute top-50 start-50 translate-middle">
-        <h5 class="font text-primary"> Sri ganganagr</h5>
-        <h5 class="font text-primary"> 43. C </h5>
+      <div class="position-absolute ms-5 mt-5">
+        <h5 class="font text-dark m-0"> Sri ganganagr</h5>
+        <h5 class="font text-dark m-0"> 43. C </h5>
       </div>
-      <img *ngIf="true" src="assets/images/hot.jpg" class="" alt="...">
-      <img *ngIf="false" src="assets/images/cold.jpg" class="" alt="...">
-      <div class="card-body" style="background-color:#f8f7f9">
-        <p class="card-text">
-        More Information:</p>
+      <img *ngIf="false" src="assets/images/hot.jpg" class="" alt="...">
+      <img *ngIf="true" src="assets/images/cold.jpg" class="" alt="...">
+      <div class="card-body" style="background-color:#ece5f3">
+        <p class="card-text text-primary">
+          More Information:</p>
 
         <div class="d-flex justify-content-between">
-          <img height="40" src="assets/images/cold-tem.png" alt="temp">
-          <h6>56</h6>
-          <img height="40" src="assets/images/hot-temp.png" alt="temp">
-          <h6>56</h6> 
-          
+
+          <div class="d-flex">
+            <div>
+              <img height="40" src="assets/images/cold-tem.png" alt="temp">
+              <p>min</p>
+            </div>
+            <h6>56</h6>
+          </div>
+
+          <div class="d-flex">
+            <div>
+              <img height="40" src="assets/images/hot-temp.png" alt="temp">
+              <p>max</p>
+            </div>
+            <h6>56</h6>
+          </div>
 
         </div>
-        
+
+        <div class="d-flex justify-content-between mt-4">
+          <div class="d-flex">
+            <div>
+              <img height="40" src="assets/images/hot-wind.jpeg" alt="temp">
+              <p>Humidity</p>
+            </div>
+            <h6>56</h6>
+          </div>
+
+          <div class="d-flex">
+            <div>
+              <img height="40" src="assets/images/wind.png" alt="temp">
+              <p>wind</p>
+            </div>
+            <h6>56</h6>
+          </div>
+
+
+        </div>
+
       </div>
     </div>
 
