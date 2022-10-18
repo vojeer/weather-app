@@ -5,15 +5,11 @@
 export const environment = {
   production: false,
 
-  weatherApiUrl: 'https://open-weather-map27.p.rapidapi.com/weather',
+  weatherApiUrl: 'http://api.weatherstack.com/current',
 
-  RapidAPIKeyHeaderNAME: 'X-RapidAPI-Key',
+  weatherApiKey: '579bd65b9a9461a641f4f6a29143763f',
 
-  XRapidAPIKeyHeaderValue: 'e1029f6b8amsh24528e96acb1b96p1dd037jsnfbd64f7914e8',
 
-  XRapidAPIHostHeaderNAME: 'X-RapidAPI-Host',
-
-  XRapidAPIHostHeaderValue: 'open-weather-map27.p.rapidapi.com'
 
 };
 

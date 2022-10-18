@@ -46,11 +46,12 @@
   <div class="d-flex justify-content-center mt-5">
     <div class="card shadow position-relative" style="width: 18rem;">
       <div class="position-absolute ms-5 mt-5">
-        <h5 class="font text-dark m-0"> Sri ganganagr</h5>
-        <h5 class="font text-dark m-0"> 43. C </h5>
+        <h5 class="font text-dark m-0"> Sri ganganagar</h5>
+        <h5 class="font text-dark m-0"> 43. °C </h5>
       </div>
       <img *ngIf="false" src="assets/images/hot.jpg" class="" alt="...">
-      <img *ngIf="true" src="assets/images/cold.jpg" class="" alt="...">
+      <img *ngIf="false" src="assets/images/cold.jpg" class="" alt="...">
+      <img *ngIf="true" src="assets/images/spring.jpeg" class="" alt="...">
       <div class="card-body" style="background-color:#ece5f3">
         <p class="card-text text-primary">
           More Information:</p>
@@ -92,7 +93,6 @@
             <h6>56</h6>
           </div>
 
-
         </div>
 
       </div>
@@ -101,9 +101,6 @@
   </div>
 </div>
 
-<div class="lower-data">
-
-</div>
-
+<app-footer></app-footer>
 
 <router-outlet></router-outlet>
