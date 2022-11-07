@@ -3,10 +3,12 @@ import {HttpClient, HttpHeaders, HttpParams, } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
+
 
   constructor( private http: HttpClient) { }
 
@@ -18,6 +20,8 @@ export class WeatherService {
      
     );
   }
+
+
 }
 
 

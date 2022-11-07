@@ -33,72 +33,117 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>
 <!-- nav bar ends here  -->
 
 <div class="container">
-  <div class="d-flex justify-content-center mt-5">
-    <div class="card shadow position-relative" style="width: 18rem;">
-      <div class="position-absolute ms-5 mt-5">
-        <h5 class="font text-dark m-0"> Sri ganganagar</h5>
-        <h5 class="font text-dark m-0"> 43. °C </h5>
-      </div>
-      <img *ngIf="false" src="assets/images/hot.jpg" class="" alt="...">
-      <img *ngIf="false" src="assets/images/cold.jpg" class="" alt="...">
-      <img *ngIf="true" src="assets/images/spring.jpeg" class="" alt="...">
-      <div class="card-body" style="background-color:#ece5f3">
-        <p class="card-text text-primary">
-          More Information:</p>
 
-        <div class="d-flex justify-content-between">
-
-          <div class="d-flex">
-            <div>
-              <img height="40" src="assets/images/cold-tem.png" alt="temp">
-              <p>min</p>
-            </div>
-            <h6>56</h6>
+  <div class="row">
+    <div class="col-md-4 mt-5">
+      <div>
+        <!-- <form action="">
+          <div >
+            <form>
+              <div class="d-flex">
+                <input #search class="form-control me-2" [(ngModel)]="searchText" type="search" placeholder="Search"
+                  aria-label="Search">
+                <button (click)="getvalue(search.value)" class="btn btn-outline-success" type="submit">Search</button>
+              </div>
+              <div>   
+                <div *ngFor = "let item of cities |filter:searchText" >
+                  <p >
+                    {{item.city}}
+                  </p>
+  
+                  <p>{{searchText}}</p>
+                </div>
+         
+            </div> 
+            </form>
           </div>
-
-          <div class="d-flex">
-            <div>
-              <img height="40" src="assets/images/hot-temp.png" alt="temp">
-              <p>max</p>
-            </div>
-            <h6>56</h6>
+        </form> -->
+        <div class="form citylist">
+  
+          <div class="d-flex position-fixed">
+            <input class="form-control me-2" type="text" [(ngModel)]="term" placeholder="Search"
+            aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
           </div>
-
-        </div>
-
-        <div class="d-flex justify-content-between mt-4">
-          <div class="d-flex">
-            <div>
-              <img height="40" src="assets/images/hot-wind.jpeg" alt="temp">
-              <p>Humidity</p>
-            </div>
-            <h6>56</h6>
+         
+          <div *ngFor = "let item of cities |filter:term" >
+            <p>
+              {{item.city}}
+            </p>
           </div>
-
-          <div class="d-flex">
-            <div>
-              <img height="40" src="assets/images/wind.png" alt="temp">
-              <p>wind</p>
-            </div>
-            <h6>56</h6>
-          </div>
-
-        </div>
-
+   
+      </div> 
       </div>
     </div>
 
+    <div class="col-md-5">
+      <div class="d-flex justify-content-center mt-5">
+        <div class="card shadow position-relative" style="width: 18rem;">
+          <div class="position-absolute ms-5 mt-5">
+            <h5 class="font text-dark m-0">{{weatherInfo.location.name}}</h5>
+            <h5 *ngIf="weatherInfo.current.is_day === 'yes'" class="font text-dark m-0">Day time</h5>
+            <h5 *ngIf="weatherInfo.current.is_day === 'no'" class="font text-dark m-0">Night time</h5>
+          </div>
+          <img *ngIf="weatherInfo.current.temperature > 30" src="assets/images/hot.jpg" class="" alt="...">
+          <img *ngIf="weatherInfo.current.temperature < 30 && weatherInfo.current.temperature > 20 " src="assets/images/cold.jpg" class="" alt="...">
+          <img *ngIf="weatherInfo.current.temperature < 20" src="assets/images/spring.jpeg" class="" alt="...">
+          <div class="card-body" style="background-color:#ece5f3">
+            <p class="card-text text-primary">
+              More Information:</p>
+    
+            <div class="d-flex justify-content-between">
+    
+              <div class="d-flex">
+                <div>
+                  <img height="40"  src="assets/images/hot-temp.png"alt="temp">
+                  <p>tem</p>
+                </div>
+                <h6>{{weatherInfo.current.temperature}} °C</h6>
+              </div>
+    
+              <div class="d-flex">
+                <div>
+                  <img height="40"  src="assets/images/cold-tem.png" alt="temp">
+                  <p>Feels like</p>
+                </div>
+                <h6>{{weatherInfo.current.feelslike}} °C</h6>
+              </div>
+    
+            </div>
+    
+            <div class="d-flex justify-content-between mt-4">
+              <div class="d-flex">
+                <div>
+                  <img height="40" src="assets/images/hot-wind.jpeg" alt="temp">
+                  <p>Humidity</p>
+                </div>
+                <h6>{{weatherInfo.current.humidity}}</h6>
+              </div>
+    
+              <div class="d-flex">
+                <div>
+                  <img height="40" src="assets/images/wind.png" alt="temp">
+                  <p>Wind</p>
+                </div>
+                <h6>{{weatherInfo.current.wind_speed}}</h6>
+              </div>
+    
+            </div>
+    
+          </div>
+        </div>
+    
+      </div>
+    </div>
   </div>
+ 
+ 
 </div>
 
 <app-footer></app-footer>

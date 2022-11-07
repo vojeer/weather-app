@@ -35,6 +35,9 @@
         feelslike: number;
         uv_index: number;
         visibility: number;
+        is_day: string;
+        
+
     }
 
     export interface WeatherResponse {
