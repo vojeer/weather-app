@@ -14,7 +14,7 @@ export class WeatherService {
 
 
   getWeatherData(data: string): Observable<any> {
-    const params = new HttpParams().set('access_key', `${environment.weatherApiKey}`).set('query',`${data}`)
+    const params = new HttpParams().set('access_key',`${environment.weatherApiKey}`).set('query',`${data}`)
 
     return this.http.get<any>(environment.weatherApiUrl,{params}
      

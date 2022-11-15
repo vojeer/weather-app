@@ -86,13 +86,13 @@
       <div class="d-flex justify-content-center mt-5">
         <div class="card shadow position-relative" style="width: 18rem;">
           <div class="position-absolute ms-5 mt-5">
-            <h5 class="font text-dark m-0">{{weatherInfo.location.name}}</h5>
-            <h5 *ngIf="weatherInfo.current.is_day === 'yes'" class="font text-dark m-0">Day time</h5>
-            <h5 *ngIf="weatherInfo.current.is_day === 'no'" class="font text-dark m-0">Night time</h5>
+            <h5 class="font text-dark m-0">{{weatherInfo?.location?.name}}</h5>
+            <h5 *ngIf="weatherInfo?.current?.is_day === 'yes'" class="font text-dark m-0">Day time</h5>
+            <h5 *ngIf="weatherInfo?.current?.is_day === 'no'" class="font text-dark m-0">Night time</h5>
           </div>
-          <img *ngIf="weatherInfo.current.temperature > 30" src="assets/images/hot.jpg" class="" alt="...">
-          <img *ngIf="weatherInfo.current.temperature < 30 && weatherInfo.current.temperature > 20 " src="assets/images/cold.jpg" class="" alt="...">
-          <img *ngIf="weatherInfo.current.temperature < 20" src="assets/images/spring.jpeg" class="" alt="...">
+          <img *ngIf="temperature > 30 " src="assets/images/hot.jpg" class="" alt="...">
+          <img *ngIf="temperature< 30 && temperature > 20 " src="assets/images/cold.jpg" class="" alt="...">
+          <img *ngIf="temperature < 20" src="assets/images/spring.jpeg" class="" alt="...">
           <div class="card-body" style="background-color:#ece5f3">
             <p class="card-text text-primary">
               More Information:</p>
@@ -104,7 +104,7 @@
                   <img height="40"  src="assets/images/hot-temp.png"alt="temp">
                   <p>tem</p>
                 </div>
-                <h6>{{weatherInfo.current.temperature}} °C</h6>
+                <h6>{{temperature}} °C</h6>
               </div>
     
               <div class="d-flex">
@@ -112,7 +112,7 @@
                   <img height="40"  src="assets/images/cold-tem.png" alt="temp">
                   <p>Feels like</p>
                 </div>
-                <h6>{{weatherInfo.current.feelslike}} °C</h6>
+                <h6>{{weatherInfo?.current?.feelslike}} °C</h6>
               </div>
     
             </div>
@@ -123,7 +123,7 @@
                   <img height="40" src="assets/images/hot-wind.jpeg" alt="temp">
                   <p>Humidity</p>
                 </div>
-                <h6>{{weatherInfo.current.humidity}}</h6>
+                <h6>{{weatherInfo?.current?.humidity}}</h6>
               </div>
     
               <div class="d-flex">
@@ -131,7 +131,7 @@
                   <img height="40" src="assets/images/wind.png" alt="temp">
                   <p>Wind</p>
                 </div>
-                <h6>{{weatherInfo.current.wind_speed}}</h6>
+                <h6>{{weatherInfo?.current?.wind_speed}}</h6>
               </div>
     
             </div>

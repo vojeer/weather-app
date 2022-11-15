@@ -11,30 +11,21 @@ import { WeatherService } from './weather.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  temperature!: number;
   title = 'weather';
   value = false
-  city = 'NEW DELHI';
+  city = 'NEWwdd DELHIrrr';
   searchText = '';
   cities = indianCities;
   term!: string;
-  weatherInfo!: WeatherResponse
+  weatherInfo!: WeatherResponse;
 
-  characters = [
-    'Ant-Man',
-    'Aquaman',
-    'Asterix',
-    'The Atom',
-    'The Avengers',
-    'Batgirl',
-    'Batman',
-    'Batwoman',
-  ]
   constructor(private weatherservice: WeatherService) {
   }
 
   ngOnInit(): void {  
    
-  //  this.getdata();
+   this.getdata();
    let data = Helper.FarenhieghtToCalcius(98.6)
    console.log(data)
 
@@ -49,10 +40,15 @@ export class AppComponent implements OnInit {
 
   getdata(): void {
 
-    this.weatherservice.getWeatherData(this.city).subscribe((data:WeatherResponse) => {
+    this.weatherservice.getWeatherData(this.city).subscribe((data) => {
 
       this.weatherInfo = data;
+      this.temperature = this.weatherInfo?.current?.temperature;
       console.log(this.weatherInfo)
-    })
+    },
+    (error) => {
+      console.log(error.error)
+    }
+    )
   }
 }
