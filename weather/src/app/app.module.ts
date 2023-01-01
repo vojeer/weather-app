@@ -8,11 +8,13 @@ import { SharedModule } from 'src/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InterceptorService } from './service/interceptor.service';
+import { WeatherInfoComponent } from './weather-info/weather-info.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    WeatherInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,11 +27,11 @@ import { InterceptorService } from './service/interceptor.service';
 
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: InterceptorService,
-      multi: true
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: InterceptorService,
+    //   multi: true
+    // }
   ],
 
   bootstrap: [AppComponent]

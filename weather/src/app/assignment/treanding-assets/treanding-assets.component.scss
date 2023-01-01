@@ -1,0 +1,44 @@
+.main-container {
+    background-color: #14172B !important;
+}
+
+.treanding-heading {
+    margin-top: 232px;
+    margin-left: 111px;
+}
+
+.cards-container {
+    margin-left: 111px;
+    margin-top: 50px;
+    background: linear-gradient(180deg, rgba(98, 106, 136, 0.1) 0%, rgba(46, 49, 73, 0.1) 107.43%);
+    backdrop-filter: blur(50px);
+
+    .coin-names {
+        font-family: 'Tomorrow';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 31px;
+        color: #737BAE;
+    }
+
+    .price-value {
+        font-family: 'Tomorrow';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 31px;
+        color: #ECF0FF;
+    }
+
+    .percentage{
+     
+        font-family: 'Tomorrow';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 31px;
+        color: #00FFA3 !important;
+    }
+
+}

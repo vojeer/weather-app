@@ -18,7 +18,7 @@ export class WeatherService {
 
     return this.http.get<any>(environment.weatherApiUrl,{params}
      
-    );
+    )
   }
 
 

@@ -26,6 +26,7 @@
     "ngx-google-places-autocomplete": "^2.0.5",
     "rxjs": "~7.5.0",
     "stream-browserify": "^3.0.0",
+    "subsink": "^1.0.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
