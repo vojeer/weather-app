@@ -1,0 +1,151 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#d7a0e4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="/assets/images/logo.png" height="45" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- nav bar ends here  -->
+  
+  <div class="container">
+  
+    <div class="row">
+      <div class="col-md-4 mt-5">
+        <div>
+          <!-- <form action="">
+            <div >
+              <form>
+                <div class="d-flex">
+                  <input #search class="form-control me-2" [(ngModel)]="searchText" type="search" placeholder="Search"
+                    aria-label="Search">
+                  <button (click)="getvalue(search.value)" class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+                <div>   
+                  <div *ngFor = "let item of cities |filter:searchText" >
+                    <p >
+                      {{item.city}}
+                    </p>
+    
+                    <p>{{searchText}}</p>
+                  </div>
+           
+              </div> 
+              </form>
+            </div>
+          </form> -->
+          <div class="form citylist">
+    
+            <div class="d-flex position-fixed">
+              <input class="form-control me-2" type="text" [(ngModel)]="term" placeholder="Search"
+              aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </div>
+           
+            <div *ngFor = "let item of cities |filter:term" >
+              <p>
+                {{item.city}}
+              </p>
+            </div>
+     
+        </div> 
+        </div>
+      </div>
+  
+      <div class="col-md-5">
+        <div class="d-flex justify-content-center mt-5">
+          <div class="card shadow position-relative" style="width: 18rem;">
+            <div class="position-absolute ms-5 mt-5">
+              <h5 class="font text-dark m-0">{{weatherInfo?.location?.name}}</h5>
+              <h5 *ngIf="weatherInfo?.current?.is_day === 'yes'" class="font text-dark m-0">Day time</h5>
+              <h5 *ngIf="weatherInfo?.current?.is_day === 'no'" class="font text-dark m-0">Night time</h5>
+            </div>
+            <img *ngIf="temperature > 30 " src="assets/images/hot.jpg" class="" alt="...">
+            <img *ngIf="temperature< 30 && temperature > 20 " src="assets/images/cold.jpg" class="" alt="...">
+            <img *ngIf="temperature < 20" src="assets/images/spring.jpeg" class="" alt="...">
+            <div class="card-body" style="background-color:#ece5f3">
+              <p class="card-text text-primary">
+                More Information:</p>
+      
+              <div class="d-flex justify-content-between">
+      
+                <div class="d-flex">
+                  <div>
+                    <img height="40"  src="assets/images/hot-temp.png"alt="temp">
+                    <p>tem</p>
+                  </div>
+                  <h6>{{temperature}} °C</h6>
+                </div>
+      
+                <div class="d-flex">
+                  <div>
+                    <img height="40"  src="assets/images/cold-tem.png" alt="temp">
+                    <p>Feels like</p>
+                  </div>
+                  <h6>{{weatherInfo?.current?.feelslike}} °C</h6>
+                </div>
+      
+              </div>
+      
+              <div class="d-flex justify-content-between mt-4">
+                <div class="d-flex">
+                  <div>
+                    <img height="40" src="assets/images/hot-wind.jpeg" alt="temp">
+                    <p>Humidity</p>
+                  </div>
+                  <h6>{{weatherInfo?.current?.humidity}}</h6>
+                </div>
+      
+                <div class="d-flex">
+                  <div>
+                    <img height="40" src="assets/images/wind.png" alt="temp">
+                    <p>Wind</p>
+                  </div>
+                  <h6>{{weatherInfo?.current?.wind_speed}}</h6>
+                </div>
+      
+              </div>
+      
+            </div>
+          </div>
+      
+        </div>
+      </div>
+    </div>
+   
+   
+  </div>
+  
+  <app-footer></app-footer>
+  
+  <router-outlet></router-outlet>

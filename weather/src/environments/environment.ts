@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  weatherApiUrl: 'http://api.weatherstack.com/current',
+  weatherApiUrl: 'http://api.weatherstack.com/currente',
 
   weatherApiKey: '579bd65b9a9461a641f4f6a29143763f',
 

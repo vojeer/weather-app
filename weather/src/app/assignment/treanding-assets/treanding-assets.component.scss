@@ -1,0 +1,117 @@
+.main-container {
+    background-color: #14172B !important;
+    padding-bottom: 100px;
+    padding-top: 300px;
+}
+
+.value-bg {
+    background-color: #14172B !important;
+    padding: 10px 40px;
+    border-radius: 30px;
+}
+
+.value-bg1 {
+    background-color: #14172B !important;
+    padding: 10px 20px !important;
+    border-radius: 30px;
+}
+
+.treanding-heading {
+    margin-top: 232px;
+    margin-left: 111px;
+}
+
+.card-main-container {
+    position: relative;
+    margin-left: 111px;
+    margin-top: 100px;
+}
+
+.card-main-container:after {
+    content: '';
+    z-index: 99;
+    border-top-right-radius: 12px;
+    left: 56px !important;
+    height: 20px !important;
+    width: 20px !important;
+    top: 1px !important;
+    position: absolute !important;
+    background: linear-gradient( rgba(98, 106, 136, 0.1) 0%, rgba(46, 49, 73, 0.1) 107.43%);
+    backdrop-filter: blur(50px);
+    
+}
+
+
+.shadowed-icon {
+    position: absolute;
+    left: 81px;
+    top: -58px;
+    z-index: 999;
+    width: 100px;
+    height: 100px;
+    padding: 25px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(98, 106, 136, 0.1) 0%, rgba(234, 179, 0, 0.06) 100%);
+    backdrop-filter: blur(50px);
+}
+
+.cards-container:before {
+    content: ' ';
+    z-index: -1 !important;
+    left: 73px;
+    top: -65px;
+    position: absolute;
+    width: 114px;
+    /* 5px gap, 1px border */
+    height: 114px;
+    border-radius: 57px;
+    background-color: #14172B !important;
+}
+
+
+.cards-container {
+    padding: 32px;
+    border: 1px solid;
+    border-image-source: linear-gradient(180deg, rgba(236, 240, 255, 0.1) 0%, rgba(46, 49, 73, 0) 107.43%);
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(98, 106, 136, 0.1) 0%, rgba(46, 49, 73, 0.1) 107.43%);
+    backdrop-filter: blur(50px);
+
+    .coin-names {
+        font-family: 'Tomorrow';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 31px;
+        color: #737BAE;
+    }
+
+    .price-value {
+        font-family: 'Tomorrow';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 31px;
+        color: #ECF0FF;
+    }
+
+    .percentage {
+
+        font-family: 'Tomorrow';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 31px;
+        color: #00FFA3 !important;
+    }
+
+    .price-tag {
+        font-family: 'Tomorrow';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 31px;
+        text-align: center;
+        color: #5A5F7D;
+    }
+}
